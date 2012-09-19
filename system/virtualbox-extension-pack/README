@@ -1,0 +1,3 @@
+This slackbuild creates a package from Oracle's Oracle VM VirtualBox Extension Pack.
+
+The extension pack contains various libraries which make support for USB 2.0 devices, VirtualBox RDP and PXE boot for Intel cards possible.
