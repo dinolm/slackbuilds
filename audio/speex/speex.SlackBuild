@@ -2,6 +2,7 @@
 
 # Slackware build script for speex
 
+# Copyright (c) 2012  Vliegendehuiskat 
 # Copyright (c) 2007  Alex Lysenka <me@alkos333.net>
 # All rights reserved.
 #
@@ -80,7 +81,8 @@ CXXFLAGS="$SLKCFLAGS" \
   --enable-static=no \
   --build=$ARCH-slackware-linux
 
-make 
+# Hack to also make it look in the right directory on multilib systems
+make LDFLAGS="-L/usr/lib${LIBDIRSUFFIX}"
 make install DESTDIR=$PKG
 
 find $PKG | xargs file | grep -e "executable" -e "shared object" | grep ELF \
